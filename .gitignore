@@ -10,8 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-public/css/app.css
-public/mix-manifest.json
-public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg
-public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg
-public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg
+/public/css/app.css
+/public/mix-manifest.json
+/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg
+/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg
+/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg
