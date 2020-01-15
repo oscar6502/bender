@@ -20,36 +20,49 @@
         {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $article->updated_at)->format('d-m-Y') }}    
         
 
-        @if (Auth::user()->admin || $article->author == Auth::user()->name )
+        
 
             <div class="dropdown dropright">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Acciones
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        
+
+            @if (Auth::user()->admin)
+
                 <form method="POST" action="/articles/{{$article->id}}/check" class="">
                 @csrf
                 @method('PUT')
                     <button type="submit" class="dropdown-item"  onclick="return confirm('Esta seguro de aprobar el articulo ?')" ><i class="fas fa-check"></i> Aprobar </button>
                 </form>
-                        
+                       
                 <div class="dropdown-divider"></div>
+
+            @endif
+
+            @if (Auth::user()->admin || $article->author == Auth::user()->name )
 
                 <a class="dropdown-item" href="/articles/{{ $article->id }}/edit"><i class="fas fa-edit"></i>Editar</a>
 
-                <div class="dropdown-divider"></div>
 
+
+            @endif
+
+            @if (Auth::user()->admin)
+
+                <div class="dropdown-divider"></div>
+                
                 <form method="POST" action="/articles/{{$article->id}}" class="">
                 @csrf
                 @method('DELETE')
                     <button type="submit" class="dropdown-item"  onclick="return confirm('Esta seguro de eliminar el articulo ?')" ><i class="fas fa-trash"></i> Eliminar </button>
                 </form>
 
+            @endif
+
             </div>
             </div>
 
-        @endif
 
     </p>
 
