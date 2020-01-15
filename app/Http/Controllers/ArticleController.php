@@ -74,16 +74,7 @@ class ArticleController extends Controller
 
         Storage::disk('local')->put('article_' . $article->id . '.html', $post);
 
-        // return view('app/show', compact('article'));
-
-        // return redirect()->route('/show', ['id' => $article->id]);
-        // return redirect()->route('app/show',  $article->id);
-
-        // dd($post);
-
-        return redirect()->action(
-            'ArticleController@show', $article
-        );
+        return redirect()->action('ArticleController@show', $article);
     }
 
     /**
@@ -136,25 +127,19 @@ class ArticleController extends Controller
         $content = $request->input('post');
         $checked = $request->input('checked');
 
-        // dd($checked);
-
         $article->description = $description;
-        $article->author = Auth::user()->name;
+        // $article->author = Auth::user()->name;
         $article->approval = "";
         $article->tags = "";
         $article->category = "";
         $article->category_sub = "";
         $article->visible = $article->visible;
 
-
         if ($checked == "on") {
-
             $checked = true;
-
         } else {
             $checked = false;
         }
-
 
         $article->checked = $checked;
         $article->article_file = "";
