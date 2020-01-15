@@ -11,6 +11,21 @@
     @include('shared.search')
 
 
+
+
+
+    @foreach($my_pending_approval as $article_pending)   
+        <div class="alert alert-warning mt-4 " role="alert">
+            <p> Mis pendientes de aprobacion </p>
+            <i class="fas fa-sticky-note"></i>  {{ $article_pending->description }} <a href="articles/{{ $article_pending->id }}" class="alert-link text-primary">Click</a> para ver el articulo.
+        </div>
+    @endforeach 
+
+
+
+
+
+
     {{-- Notificaciones --}}
     @if($not_checked > 0 && Auth::user()->admin == true)
 
