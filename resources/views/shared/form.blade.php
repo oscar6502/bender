@@ -29,6 +29,17 @@
       height: 400,
       tabsize: 2,
       followingToolbar: true,
+      toolbar: [
+  ['style', ['style']],
+  ['font', ['bold', 'underline', 'clear']],
+  ['fontname', ['fontname']],
+  ['fontsize', ['fontsize']],
+  ['color', ['color']],
+  ['para', ['ul', 'ol', 'paragraph']],
+  ['table', ['table']],
+  ['insert', ['link', 'picture', 'video']],
+  ['view', ['fullscreen']],
+      ]
     });
 
 </script>
